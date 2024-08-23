@@ -1,44 +1,50 @@
 #include "main.h"
 
 /**
- * times_table - prints tables
- * Return: void
+ * times_table - Prints times table
+ *
+ * Return; Null Void
  */
 void times_table(void)
 {
-	int a = 0;
-	int b;
-	int rep;
+	int i, j, product, first_digit, last_digit;
+	int flag = 0;
 
-	while (a <= 9)
+	for (i = 0; i <= 9; i++)
 	{
-		b = 0;
-		while (b <= 9)
+		for (j = 0; j <= 9; j++)
 		{
-			rep = a * b;
-			if (b == 0)
+			product = i * j;
+			flag = i * (j + 1);
+			if (product > 9)
 			{
-				_putchar('0' + rep);
-			}
-			else if (rep < 10)
-			{
-				_putchar(' ');
-				_putchar('0' + rep);
+				first_digit = (product / 10) + 48;
+				last_digit = (product % 10) + 48;
+				_putchar(first_digit);
+				_putchar(last_digit);
 			}
 			else
 			{
-				_putchar('0' + rep / 10);
-				_putchar('0' + rep % 10);
+				_putchar(product + 48);
 			}
-
-			if (b < 9)
+			if (j == 9)
 			{
-				_putchar(',');
-				_putchar(' ');
+				_putchar('\n');
 			}
-			b++;
+			else
+			{
+				if (flag > 9)
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
+				else
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+				}
+			}
 		}
-		_putchar('\n');
-		a++;
 	}
 }

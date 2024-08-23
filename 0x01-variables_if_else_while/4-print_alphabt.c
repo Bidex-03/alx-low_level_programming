@@ -1,26 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-
 /**
- * main - Entry point
- *
+ * main - entry mode
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	char low, e, q;
+	char alph;
 
-	e = 'e';
-	q = 'q';
-
-	for (low = 'a'; low <= 'z'; low++)
+	for (alph = 'a'; alph <= 'z'; alph++)
 	{
-		if (low != e && low != q)
-			putchar(low);
+		if (alph == 'q' || alph == 'e')
+		{
+			continue;
+		}
+		putchar(alph);
 	}
 	putchar('\n');
-
 	return (0);
 }

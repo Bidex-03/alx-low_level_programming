@@ -1,23 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-
 /**
- * main - Entry point
- *
+ * main - Entry mode
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	int d;
-	char low;
+	char n;
 
-	for (d = '0'; d <= '9'; d++)
-		putchar(d);
-	for (low = 'a'; low <= 'f'; low++)
-		putchar(low);
+	for (n = '0'; n <= '9'; n++)
+		putchar(n);
+	for (n = 'a'; n <= 'f'; n++)
+		putchar(n);
 	putchar('\n');
-
 	return (0);
 }

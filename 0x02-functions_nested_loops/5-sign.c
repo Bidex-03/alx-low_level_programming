@@ -1,27 +1,26 @@
 #include "main.h"
+
 /**
- * print_sign - entry point
- * @n : number to check
- * Return:0 or 1
+ * print_sign - Check for -ve, +ve or 0 integers
+ * @n: This is a real number
+ *
+ * Return: 0 if zero, 1 if > 0 and -1 if < 0
  */
 int print_sign(int n)
 {
-	int numz;
-
 	if (n > 0)
 	{
-		numz = 1;
 		_putchar('+');
+		return (1);
 	}
-	else if (n == 0)
+	else if (n < 0)
 	{
-		numz = 0;
-		_putchar('0');
+		_putchar('-');
+		return (-1);
 	}
 	else
 	{
-		numz = -1;
-		_putchar('-');
+		_putchar('0');
+		return (0);
 	}
-	return (numz);
 }
